@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(185, 244, 66);
+	background-image: url("CtrlEsc.jpg");
 	background-size: cover;
   	background-attachment: fixed;
   	background-repeat: no-repeat;
@@ -8,21 +8,42 @@ body {
   	-o-background-size: cover;
   	background-size: cover;
   	background-position: center;
- 	margin: 0;
+ 	  margin: 0;
+    padding: 0;
 	font-family: Courier New;
 }
 h1{
   margin-left: 40%;
- /* margin-bottom: 15%;*/
 }
 hr{
-  margin-bottom: 15%;
+  margin-bottom: 5%;
 }
 table{
   margin-left: 38%;
   background-color: rgba(199, 204, 191,.5);
-  padding: 2%;
+  padding: 1%;
+}
+table tr td {
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 #send{
-  margin-left: 50%;
+  margin-top: 2%;
+  margin-left: 47%;
+  background-color: rgb(1, 6, 15);
+  color: rgb(153, 161, 175);
+  padding: 0.6%;
+  width: 3%;
+  text-align: center;
+}
+#question{
+  width: 20%;
+  margin-left: 7%;
+  margin-top: 4%;
+  padding: 1%;
+  text-align: center;
+  float: left;
+  background-color: rgba(1, 6, 15,.4);
+  color: rgb(153, 161, 175);
+
 }

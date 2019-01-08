@@ -9,7 +9,10 @@
 <body>
 <h1>Project Login</h1>
 <hr>
-<table>
+<div id="question" style="visibility: hidden;">If you login you will get the best joke in the world!</div>
+<div id="joke"></div>
+<div id="inputs">
+	<table>
 	<tr>
 		<td><label>Login: </label></td>
 		<td><input type="text" id="login"></td>
@@ -19,6 +22,8 @@
 		<td><input type="text" id="pass"></td>
 	</tr>
 </table>
-<button id="send">OK</button>
+</div>
+<div id="wrong" style="visibility: hidden;">You typed wrong name or password.</div>
+<div id="send">OK</div>
 </body>
 </html>

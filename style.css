@@ -1,0 +1,28 @@
+body {
+	background-color: rgb(185, 244, 66);
+	background-size: cover;
+  	background-attachment: fixed;
+  	background-repeat: no-repeat;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	background-position: center;
+ 	margin: 0;
+	font-family: Courier New;
+}
+h1{
+  margin-left: 40%;
+ /* margin-bottom: 15%;*/
+}
+hr{
+  margin-bottom: 15%;
+}
+table{
+  margin-left: 38%;
+  background-color: rgba(199, 204, 191,.5);
+  padding: 2%;
+}
+#send{
+  margin-left: 50%;
+}

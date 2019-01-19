@@ -11,14 +11,12 @@ body {
  	  margin: 0;
     padding: 0;
 	font-family: Courier New;
-}
-h1{
-  margin-left: 40%;
+  font-size: 80%;
 }
 hr{
   margin-bottom: 5%;
 }
-table{
+#prihlasovanie{
   margin-left: 38%;
   background-color: rgba(199, 204, 191,.5);
   padding: 1%;
@@ -27,8 +25,8 @@ table tr td {
   padding-top: 5%;
   padding-bottom: 5%;
 }
-#send{
-  margin-top: 2%;
+#send {
+  margin-top: 1%;
   margin-left: 47%;
   background-color: rgb(1, 6, 15);
   color: rgb(153, 161, 175);
@@ -36,14 +34,64 @@ table tr td {
   width: 3%;
   text-align: center;
 }
-#question{
-  width: 20%;
-  margin-left: 7%;
-  margin-top: 4%;
-  padding: 1%;
-  text-align: center;
-  float: left;
-  background-color: rgba(1, 6, 15,.4);
+#sendmess{
+  background-color: rgb(1, 6, 15);
   color: rgb(153, 161, 175);
-
+  padding: 3%;
+  text-align: center;
+  width: 100%;
+  margin-left: 70%;
 }
+
+#wrong{
+  margin-top: 1%;
+  margin-left: 38%;
+}
+.myNav{
+  background-color: rgba(0,0,0,.1);
+  margin-bottom: 4%;
+  overflow: hidden;
+}
+.myNav a{
+  float: right;
+  text-align: center;
+  padding: 2%;
+  font-size: 120%;
+  color: gray;
+}
+#nazov{
+  padding-right: 20%;
+}
+#joke{
+  width: 50%;
+  background-color: rgba(199, 204, 191,.5);
+  margin-left: 25%;
+  height: 0px;
+}
+ #posielanieSprav{
+  margin-left: 38%;
+  background-color: rgba(199, 204, 191,.5);
+  padding: 1%;
+ }
+ #sMess{
+  height: 10px;
+ }
+ textarea{
+  height: 100px;
+ }
+ #aJoke{
+  height: 10px;
+ }
+ #posielanieVtipov{
+   margin-left: 38%;
+   background-color: rgba(199, 204, 191,.5);
+   padding: 1%;
+ }
+ #Addjoke{
+  background-color: rgb(1, 6, 15);
+  color: rgb(153, 161, 175);
+  padding: 3%;
+  text-align: center;
+  width: 100%;
+  margin-left: 70%;
+ }

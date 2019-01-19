@@ -2,28 +2,62 @@
 <html>
 <head>
 	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<script type="text/javascript" src="script.js"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Project Login</h1>
-<hr>
-<div id="question" style="visibility: hidden;">If you login you will get the best joke in the world!</div>
+<div class="myNav">
+<a id="odhlasenie" onclick="logout()">Logout</a>
+<a id="getjoke" onclick="getJoke()">Get Joke</a>
+<a id="addjoke" onclick="add()">Add Joke</a>
+<a id="sendMess" onclick="send()">Send message</a>
+<a id="getMess" onclick="getMessages()">Your messages</a>
+ <a id="meno"></a>
+ <a id="nazov"><b>Project Login</b></a>
+</div>
 <div id="joke"></div>
+<div id="sMess" style="visibility: hidden;">
+	<table id="posielanieSprav">
+		<tr >
+			<td><label>To: </label></td>
+			<td><input type="text" id="komu"></td>
+		</tr>
+		<tr>
+			<td><label>Správa: </label></td>
+			<td><textarea id="sprava"></textarea></td>
+		</tr>
+		<tr>
+			<td><div id="sendmess" onclick="sendMessage()">Send Message</div></td>
+		</tr>
+	</table>
+</div>
+<div id="gMess"></div>
 <div id="inputs">
-	<table>
+	<table id="prihlasovanie">
 	<tr>
 		<td><label>Login: </label></td>
 		<td><input type="text" id="login"></td>
 	</tr>
 	<tr>
 		<td><label>Password: </label></td>
-		<td><input type="text" id="pass"></td>
+		<td><input type="password" id="pass"></td>
 	</tr>
 </table>
 </div>
+<div id="aJoke" style="visibility: hidden;">
+	<table id="posielanieVtipov">
+		<tr>
+			<td><label>Joke: </label></td>
+			<td><textarea id="vtip"></textarea></td>
+		</tr>
+		<tr>
+			<td><div id="Addjoke" onclick="addJoke()">Add joke</div></td>
+		</tr>
+	</table>
+</div>
 <div id="wrong" style="visibility: hidden;">You typed wrong name or password.</div>
-<div id="send">OK</div>
+<div id="send" onclick="login()">OK</div>
 </body>
 </html>

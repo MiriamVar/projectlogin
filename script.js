@@ -1,5 +1,16 @@
 function login(){
 	console.log("jama");
+	document.getElementById('odhlasenie').style.visibility="visible";
+	document.getElementById('getjoke').style.visibility="visible";
+	document.getElementById('addjoke').style.visibility="visible";
+	document.getElementById('sendMess').style.visibility="visible";
+	document.getElementById('getMess').style.visibility="visible";
+	document.getElementById('changePass').style.visibility="visible";
+	document.getElementById("wrongNP").style.visibility="hidden";
+	document.getElementById("changeP").style.display="none";
+	document.getElementById("gMess").style.display="none";
+
+
 	let meno=document.getElementById('login').value;
 	let pass=document.getElementById("pass").value;
 
@@ -26,6 +37,8 @@ function login(){
 		else if(req.readyState){
 			console.log("zle");
 			document.getElementById("wrong").style.visibility="visible";
+			document.getElementById('login').value="";
+			document.getElementById("pass").value="";
 		}
 	}
 
@@ -41,6 +54,10 @@ function login(){
 	document.getElementById("sMess").style.visibility="hidden";
 	document.getElementById("joke").style.visibility="visible";
 	document.getElementById("aJoke").style.visibility="hidden";
+	document.getElementById("wrongNP").style.visibility="hidden";
+	document.getElementById("changeP").style.display="none";
+	document.getElementById("gMess").style.display="none";
+
 
  	let url2="http://itsovy.sk:1201/joke";
 	let req2=new XMLHttpRequest();
@@ -71,6 +88,10 @@ function add(){
 	document.getElementById("joke").style.visibility="hidden";
 	document.getElementById("sMess").style.visibility="hidden";
 	document.getElementById("aJoke").style.visibility="visible";
+	document.getElementById("wrongNP").style.visibility="hidden";
+	document.getElementById("changeP").style.display="none";
+	document.getElementById("gMess").style.display="none";
+
 }
  function addJoke(){
  	let joke2= document.getElementById("vtip").value;
@@ -88,6 +109,7 @@ function add(){
 	}
 	let udaje=JSON.stringify({login:sessionStorage.getItem("name"),token:sessionStorage.getItem("token"),joke:joke2});
 	req2.send(udaje);
+	document.getElementById("vtip").value="";
  }
 
  function logout(){
@@ -105,6 +127,17 @@ function add(){
 			document.getElementById("pass").value="";
 			document.getElementById("send").style.visibility="visible";
 			document.getElementById("sMess").style.visibility="hidden";
+			document.getElementById("aJoke").style.visibility="hidden";
+			document.getElementById('odhlasenie').style.visibility="hidden";
+			document.getElementById('getjoke').style.visibility="hidden";
+			document.getElementById('addjoke').style.visibility="hidden";
+			document.getElementById('sendMess').style.visibility="hidden";
+			document.getElementById('getMess').style.visibility="hidden";
+			document.getElementById("wrongNP").style.visibility="hidden";
+			document.getElementById('changePass').style.visibility="hidden";
+			document.getElementById("changeP").style.display="none";
+			document.getElementById("gMess").style.display="none";
+
 		} 
 		
 	}
@@ -117,6 +150,11 @@ function send(){
 	document.getElementById("send").style.visibility="hidden";
 	document.getElementById("joke").style.visibility="hidden";
 	document.getElementById("sMess").style.visibility="visible";
+	document.getElementById("aJoke").style.visibility="hidden";
+	document.getElementById("wrongNP").style.visibility="hidden";
+	document.getElementById("changeP").style.display="none";
+	document.getElementById("gMess").style.display="none";
+
 			
 }
 
@@ -147,6 +185,9 @@ function getMessages(){
 	document.getElementById("send").style.visibility="hidden";
 	document.getElementById("joke").style.visibility="hidden";
 	document.getElementById("sMess").style.visibility="hidden";
+	document.getElementById("wrongNP").style.visibility="hidden";
+	document.getElementById("changeP").style.display="none";
+	document.getElementById("gMess").style.display="block";
 
 	//console.log("spravy");
  	let url2="http://itsovy.sk:1201/getMessages";
@@ -160,8 +201,12 @@ function getMessages(){
 			console.log("sprava");
 			let sprava = JSON.parse(req2.responseText);
 			console.log(sprava);
-			for (var i = 0; i < sprava.count.length; i++) {
-				sprava.count
+			for (var i = 0; i < sprava.count; i++) {
+				let divMess =document.getElementById("gMess");
+				let anotherMess= document.createElement("p");
+				let otherMess= document.createTextNode("From: "+sprava.messages[i].from+ "  Mess: "+sprava.messages[i].message);
+				anotherMess.appendChild(otherMess);
+				divMess.appendChild(anotherMess);
 			}
 		} 
 		
@@ -169,5 +214,46 @@ function getMessages(){
 	let udaje=JSON.stringify({login:sessionStorage.getItem("name"),token:sessionStorage.getItem("token")});
 	req2.send(udaje);
  }
+function change() {
+	document.getElementById("inputs").style.visibility="hidden";
+	document.getElementById("send").style.visibility="hidden";
+	document.getElementById("joke").style.visibility="hidden";
+	document.getElementById("sMess").style.visibility="hidden";
+	document.getElementById("aJoke").style.visibility="hidden";
+	document.getElementById("changeP").style.display="block";
+	document.getElementById("wrongNP").style.visibility="hidden";
+	document.getElementById("gMess").style.display="none";
+}
+function changePassword(){
+	let oldPass=document.getElementById("oldPass").value;
+	console.log(oldPass);
+	let newPass=document.getElementById("newPass").value;
+	console.log(newPass);
+	let regEx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    if (regEx.test(newPass)){
+    	console.log("zmena hesla");
+		let url2="http://itsovy.sk:1201/changepassword";
+		let req2=new XMLHttpRequest();
+		req2.open('POST',url2,true);
 
+		req2.setRequestHeader("Content-type","application/json");
+		req2.onreadystatechange= function(){
+			console.log("ide");
+			if (this.readyState==4 && this.status==200){
+				console.log("sprava");
+				document.getElementById("rightNP").style.visibility="visible";
+				document.getElementById("oldPass").value="";
+				document.getElementById("newPass").value="";
+			} 
+	
+		}
+		let udaje=JSON.stringify({login:sessionStorage.getItem("name"),token:sessionStorage.getItem("token"),oldpassword:oldPass,newpassword:newPass});
+		console.log(udaje);
+		req2.send(udaje);
+	}else {
+		document.getElementById("wrongNP").style.visibility="visible";
+		document.getElementById("oldPass").value="";
+		document.getElementById("newPass").value="";
+	}	
+}
 

@@ -9,15 +9,18 @@
 </head>
 <body>
 <div class="myNav">
-<a id="odhlasenie" onclick="logout()">Logout</a>
-<a id="getjoke" onclick="getJoke()">Get Joke</a>
-<a id="addjoke" onclick="add()">Add Joke</a>
-<a id="sendMess" onclick="send()">Send message</a>
-<a id="getMess" onclick="getMessages()">Your messages</a>
+<a id="odhlasenie" onclick="logout()" style="visibility: hidden;">Logout</a>
+<a id="getjoke" onclick="getJoke()" style="visibility: hidden;">Get Joke</a>
+<a id="addjoke" onclick="add()"  style="visibility: hidden;">Add Joke</a>
+<a id="sendMess" onclick="send()"  style="visibility: hidden;">Send message</a>
+<a id="getMess" onclick="getMessages()"  style="visibility: hidden;">Your messages</a>
+<a id="changePass" onclick="change()"  style="visibility: hidden;">Change password</a>
  <a id="meno"></a>
  <a id="nazov"><b>Project Login</b></a>
 </div>
+
 <div id="joke"></div>
+
 <div id="sMess" style="visibility: hidden;">
 	<table id="posielanieSprav">
 		<tr >
@@ -33,7 +36,9 @@
 		</tr>
 	</table>
 </div>
-<div id="gMess"></div>
+
+<div id="gMess" style="display: none;"></div>
+
 <div id="inputs">
 	<table id="prihlasovanie">
 	<tr>
@@ -44,8 +49,12 @@
 		<td><label>Password: </label></td>
 		<td><input type="password" id="pass"></td>
 	</tr>
+	<tr>
+		<td><div id="send" onclick="login()">OK</div></td>
+	</tr>
 </table>
 </div>
+
 <div id="aJoke" style="visibility: hidden;">
 	<table id="posielanieVtipov">
 		<tr>
@@ -53,11 +62,31 @@
 			<td><textarea id="vtip"></textarea></td>
 		</tr>
 		<tr>
-			<td><div id="Addjoke" onclick="addJoke()">Add joke</div></td>
+			<td colspan="2"><div id="Addjoke" onclick="addJoke()">Add joke</div></td>
 		</tr>
 	</table>
 </div>
+
+<div id="changeP" style="display: none;">
+	<table id="zmenaHesla">
+		<tr>
+			<td><label>Old password: </label></td>
+			<td><input id="oldPass" type="password"></td>
+		</tr>
+		<tr>
+			<td><label>New password: </label></td>
+			<td><input id="newPass" type="password"></td>
+		</tr>
+		<tr>
+			<td><div id="passChange" onclick="changePassword()">Change Password</div></td>
+		</tr>
+	</table>
+</div>
+
 <div id="wrong" style="visibility: hidden;">You typed wrong name or password.</div>
-<div id="send" onclick="login()">OK</div>
+
+<div id="wrongNP" style="visibility: hidden;">Your password must contain low case, upper case and numbers.</div>
+
+<div id="rightNP" style="visibility: hidden;">You change your password successfully.</div>
 </body>
 </html>

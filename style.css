@@ -10,8 +10,8 @@ body {
   	background-position: center;
  	  margin: 0;
     padding: 0;
-	font-family: Courier New;
-  font-size: 80%;
+	  font-family: Courier New;
+    font-size: 80%;
 }
 hr{
   margin-bottom: 5%;
@@ -27,11 +27,11 @@ table tr td {
 }
 #send {
   margin-top: 1%;
-  margin-left: 47%;
+  margin-left: 150%;
   background-color: rgb(1, 6, 15);
   color: rgb(153, 161, 175);
   padding: 0.6%;
-  width: 3%;
+  width: 50%;
   text-align: center;
 }
 #sendmess{
@@ -40,12 +40,16 @@ table tr td {
   padding: 3%;
   text-align: center;
   width: 100%;
-  margin-left: 70%;
+  margin-left: 105%;
 }
 
 #wrong{
   margin-top: 1%;
   margin-left: 38%;
+}
+#wrongNP, #rightRP{
+  text-align:center;
+  margin-left: 30%;
 }
 .myNav{
   background-color: rgba(0,0,0,.1);
@@ -55,7 +59,7 @@ table tr td {
 .myNav a{
   float: right;
   text-align: center;
-  padding: 2%;
+  padding: 1%;
   font-size: 120%;
   color: gray;
 }
@@ -78,6 +82,7 @@ table tr td {
  }
  textarea{
   height: 100px;
+  width: 200px;
  }
  #aJoke{
   height: 10px;
@@ -91,7 +96,29 @@ table tr td {
   background-color: rgb(1, 6, 15);
   color: rgb(153, 161, 175);
   padding: 3%;
-  text-align: center;
-  width: 100%;
+  text-align: center; 
+  width: 94%;
+ }
+ #changeP{
+  margin-left: 38%;
+  background-color: rgba(199, 204, 191,.5);
+  padding: 1%;
+  width: 20%;
+ }
+ #passChange{
+  margin-top: 1%;
   margin-left: 70%;
+  background-color: rgb(1, 6, 15);
+  color: rgb(153, 161, 175);
+  padding: 0.6%;
+  width: 150%;
+  text-align: center;
+ }
+ #gMess{
+  width: 50%;
+  background-color: rgba(199, 204, 191,.5);
+  margin-left: 25%;
+  max-height: auto;
+  padding: 1%;
+  text-align: center;
  }

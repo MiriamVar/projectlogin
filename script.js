@@ -1,15 +1,5 @@
 function login(){
 	console.log("jama");
-	document.getElementById('odhlasenie').style.visibility="visible";
-	document.getElementById('getjoke').style.visibility="visible";
-	document.getElementById('addjoke').style.visibility="visible";
-	document.getElementById('sendMess').style.visibility="visible";
-	document.getElementById('getMess').style.visibility="visible";
-	document.getElementById('changePass').style.visibility="visible";
-	document.getElementById("wrongNP").style.visibility="hidden";
-	document.getElementById("changeP").style.display="none";
-	document.getElementById("gMess").style.display="none";
-
 
 	let meno=document.getElementById('login').value;
 	let pass=document.getElementById("pass").value;
@@ -28,9 +18,18 @@ function login(){
 			sessionStorage.setItem("token",obj.token);
 			console.log(obj.token);
 			document.getElementById("meno").innerHTML=meno;
-			document.getElementById("inputs").style.visibility="hidden";
+			document.getElementById("inputs").style.display="none";
 			document.getElementById("wrong").style.visibility="hidden";
 			document.getElementById("send").style.visibility="hidden";
+			document.getElementById('odhlasenie').style.visibility="visible";
+			document.getElementById('getjoke').style.visibility="visible";
+			document.getElementById('addjoke').style.visibility="visible";
+			document.getElementById('sendMess').style.visibility="visible";
+			document.getElementById('getMess').style.visibility="visible";
+			document.getElementById('changePass').style.visibility="visible";
+			document.getElementById("wrongNP").style.visibility="hidden";
+			document.getElementById("changeP").style.display="none";
+			document.getElementById("gMess").style.display="none";
 			getJoke();
 			
 		}
@@ -48,11 +47,11 @@ function login(){
 }
 
  function getJoke(){
- 	document.getElementById("inputs").style.visibility="hidden";
+ 	document.getElementById("inputs").style.display="none";
 	document.getElementById("wrong").style.visibility="hidden";
 	document.getElementById("send").style.visibility="hidden";
 	document.getElementById("sMess").style.visibility="hidden";
-	document.getElementById("joke").style.visibility="visible";
+	document.getElementById("joke").style.display="block";
 	document.getElementById("aJoke").style.visibility="hidden";
 	document.getElementById("wrongNP").style.visibility="hidden";
 	document.getElementById("changeP").style.display="none";
@@ -83,9 +82,9 @@ function login(){
 	req2.send(udaje);
  }
 function add(){
-	document.getElementById("inputs").style.visibility="hidden";
+	document.getElementById("inputs").style.display="none";
 	document.getElementById("send").style.visibility="hidden";
-	document.getElementById("joke").style.visibility="hidden";
+	document.getElementById("joke").style.display="none";
 	document.getElementById("sMess").style.visibility="hidden";
 	document.getElementById("aJoke").style.visibility="visible";
 	document.getElementById("wrongNP").style.visibility="hidden";
@@ -120,7 +119,7 @@ function add(){
 	req2.setRequestHeader("Content-type","application/json");
 	req2.onreadystatechange= function(){
 		if (this.readyState==4 && this.status==200) {
-			document.getElementById("inputs").style.visibility="visible";
+			document.getElementById("inputs").style.display="block";
 			document.getElementById("meno").innerHTML="";
 			document.getElementById("joke").innerHTML="";
 			document.getElementById("login").value="";
@@ -146,9 +145,9 @@ function add(){
  }
 
 function send(){
-	document.getElementById("inputs").style.visibility="hidden";
+	document.getElementById("inputs").style.display="none";
 	document.getElementById("send").style.visibility="hidden";
-	document.getElementById("joke").style.visibility="hidden";
+	document.getElementById("joke").style.display="none";
 	document.getElementById("sMess").style.visibility="visible";
 	document.getElementById("aJoke").style.visibility="hidden";
 	document.getElementById("wrongNP").style.visibility="hidden";
@@ -181,9 +180,9 @@ function send(){
 
 
 function getMessages(){
-	document.getElementById("inputs").style.visibility="hidden";
+	document.getElementById("inputs").style.display="none";
 	document.getElementById("send").style.visibility="hidden";
-	document.getElementById("joke").style.visibility="hidden";
+	document.getElementById("joke").style.display="none";
 	document.getElementById("sMess").style.visibility="hidden";
 	document.getElementById("wrongNP").style.visibility="hidden";
 	document.getElementById("changeP").style.display="none";
@@ -204,7 +203,7 @@ function getMessages(){
 			for (var i = 0; i < sprava.count; i++) {
 				let divMess =document.getElementById("gMess");
 				let anotherMess= document.createElement("p");
-				let otherMess= document.createTextNode("From: "+sprava.messages[i].from+ "  Mess: "+sprava.messages[i].message);
+				let otherMess= document.createTextNode("FROM: "+ sprava.messages[i].from  + " MESS: "+ sprava.messages[i].message);
 				anotherMess.appendChild(otherMess);
 				divMess.appendChild(anotherMess);
 			}
@@ -215,9 +214,9 @@ function getMessages(){
 	req2.send(udaje);
  }
 function change() {
-	document.getElementById("inputs").style.visibility="hidden";
+	document.getElementById("inputs").style.display="none";
 	document.getElementById("send").style.visibility="hidden";
-	document.getElementById("joke").style.visibility="hidden";
+	document.getElementById("joke").style.display="none";
 	document.getElementById("sMess").style.visibility="hidden";
 	document.getElementById("aJoke").style.visibility="hidden";
 	document.getElementById("changeP").style.display="block";
